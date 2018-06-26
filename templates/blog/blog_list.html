@@ -1,0 +1,48 @@
+{% extends 'blog/base_news.html' %}
+
+{# 页面标题 #}
+{% block title %}测试测试网站{% endblock %}
+
+{# 页面内容 #}
+{% block content %}
+    <div class="container">
+        <div class="row">
+
+            <div class="col-md-8">
+                {% for blog in blogs %}
+                <a href="{% url 'blog_detail' blog.pk %}">
+                     <h3>{{ blog.title }}</h3>
+                </a>
+                 <p>作者:{{ blog.author }}</p>
+                 <p>发表日期:{{ blog.created_time }}</p>
+                 <p>分类:{{ blog.blog_types }}</p>
+                 <p>{{ blog.content|truncatechars:30 }}</p>
+
+                {% empty %}
+                    <p>-- 暂无博客，敬请期待 --</p>
+                {% endfor %}
+                    <p>一共有{{ blogs|length }}篇博客</p>
+            </div>
+
+
+            <div class="col-md-4">
+                
+                <h4>博客分类</h4>
+                <ul>
+                    {% for blog_type in blog_types %}
+                        <li><a href="{% url 'blogs_with_type' blog_type.pk %}">
+                            {{ blog_type.type_name }}</a>
+                        </li>
+                    {% empty %}
+                        <li>暂无分类</li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block nav_blog_active %}active{% endblock %}
+
+
+

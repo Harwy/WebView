@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+</head>
+
+<body>
+    <div style="
+        margin-left: 1em;
+    ">
+        <p>有人评论了你的博文 <a href="{{ comment_url }}">点击查看</a></p>
+        <p style="
+            background-color: #E0E0E0;
+            padding: 1em 0.5em;
+            /*width: 35em;*/
+            border-radius: 6px;
+            font-size: small;
+        ">{{ comment_name }}：“{{ comment_content }}”</p>
+    </div>
+    <div style="
+        margin-top:1.5em;
+        margin-right:3em;
+        font-size:small;
+        text-align:right;
+    ">
+        <a href="http://yshblog.com/" style="
+            text-decoration: none;
+            color:#517CAF;
+            margin-left:1em;
+        ">
+            杨仕航的博客
+        </a>
+        <span>(一个原创高质量的技术博客)</span>
+    </div>
+</body>
+</html>

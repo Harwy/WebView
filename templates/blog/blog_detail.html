@@ -1,0 +1,25 @@
+{% extends 'blog/base_news.html' %}
+
+{# 页面标题 #}
+{% block title %}
+    {{ blog.title }}
+{% endblock %}
+
+{% block nav_blog_active %}active{% endblock %}
+
+{# 页面标签 #}
+{% block content %}
+<body>
+        <h3>{{ blog.title }}</h3>
+        <p>作者:{{ blog.author }}</p>
+        <p>发表日期:{{ blog.created_time }}</p>
+        <p>分类:
+            <a href="{% url 'blogs_with_type' blog.blog_types.pk %}">
+                    {{ blog.blog_types }}
+            </a>   
+        </p>
+        <p>{{ blog.content }}</p>
+    </body>
+{% endblock %}
+
+
