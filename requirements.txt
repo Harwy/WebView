@@ -14,7 +14,7 @@ gevent==1.2.2
 greenlet==0.4.13
 httpie==0.9.9
 idna==2.6
-Pillow==5.1.0
+Pillow==9.0.1
 pyasn1==0.4.2
 pycparser==2.18
 Pygments==2.2.0
